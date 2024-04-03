@@ -31,16 +31,24 @@ body {
 /* BOOK */
 
 .book {
-  border: 5px solid var(--not-read);
-
   border-radius: 8px;
-  border-bottom: 10px solid var(--not-read);
+
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 2vh;
 
   padding: 5vh 2vw;
+}
+
+.read {
+  border: 5px solid var(--have-read);
+  border-bottom: 10px solid var(--have-read);
+}
+
+.notRead {
+  border: 5px solid var(--not-read);
+  border-bottom: 10px solid var(--not-read);
 }
 
 .book h3 {

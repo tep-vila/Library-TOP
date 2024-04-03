@@ -14,7 +14,7 @@
       <button type="button" id="addBookButton">Add Book</button>
     </div>
     <div class="shelf">
-      <div class="book">
+      <div class="book notRead">
         <h3>Title</h3>
         <p>Author</p>
         <p>Pages</p>
@@ -36,8 +36,10 @@
             ><input type="number" name="page" id="page" />
           </li>
           <li>
-            <label for="haveRead">Have read?</label><input type="checkbox" />
+            <label for="haveRead">Have read?</label
+            ><input type="checkbox" id="haveRead" name="haveRead" />
           </li>
+          <button class="submit">Submit</button>
         </ul>
       </form>
     </dialog>
