@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --have-read: #4caf50;
+  --not-read: #d32f2f;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background-color: #4693c8;
+}
+
+/* SHELF */
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(4, 20vw);
+  grid-auto-rows: 45vh;
+
+  gap: 5vw;
+  padding: 2vw;
+}
+
+/* BOOK */
+
+.book {
+  border: 5px solid var(--not-read);
+
+  border-radius: 8px;
+  border-bottom: 10px solid var(--not-read);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+
+  padding: 5vh 2vw;
+}
+
+.book h3 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.book p {
+  font-size: 1.5rem;
+}
