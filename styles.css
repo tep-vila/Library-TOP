@@ -37,18 +37,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2vh;
+  align-items: center;
 
   padding: 5vh 2vw;
+
+  border: 5px solid var(--not-read);
+  border-bottom: 10px solid var(--not-read);
 }
 
 .read {
   border: 5px solid var(--have-read);
   border-bottom: 10px solid var(--have-read);
-}
-
-.notRead {
-  border: 5px solid var(--not-read);
-  border-bottom: 10px solid var(--not-read);
 }
 
 .book h3 {
@@ -58,4 +57,18 @@ body {
 
 .book p {
   font-size: 1.5rem;
+}
+
+/* FOR BOOK BUTTONs */
+
+.changeStatus {
+  cursor: pointer;
+  padding: 0.8vh 0.8vw;
+  border-radius: 5px;
+}
+
+.delete {
+  cursor: pointer;
+  padding: 0.8vh 1.2vw;
+  border-radius: 5px;
 }

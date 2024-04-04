@@ -9,7 +9,7 @@ const author = document.querySelector("#author");
 const page = document.querySelector("#page");
 const haveRead = document.querySelector("#haveRead");
 
-const bookStack = [];
+let bookStack = [];
 
 function Book(title, author, page, haveRead) {
   this.title = title;
@@ -30,10 +30,61 @@ function createBookObject() {
 }
 
 function addDeleteButton(bookElement) {
-  const deleteButton = document.createElement("div");
+  const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete");
   deleteButton.textContent = "Delete Book";
+
+  deleteButton.addEventListener("click", () => {
+    const book = deleteButton.parentElement;
+    const bookTitleElement = book.querySelector("h3");
+    const bookTitle = bookTitleElement.textContent;
+
+    console.log(bookTitle);
+    deleteBookFromArray(bookTitle);
+    bookElement.remove();
+  });
+
   bookElement.appendChild(deleteButton);
+}
+
+function deleteBookFromArray(bookTitle) {
+  const updatedBookStack = bookStack.filter((book) => {
+    console.log(book.title);
+    book.title !== bookTitle;
+  });
+
+  bookStack = updatedBookStack;
+}
+
+function addChangeStatusButton(bookElement) {
+  const button = document.createElement("button");
+  const book = bookElement;
+  const title = book.querySelector("h3").textContent;
+
+  button.classList.add("changeStatus");
+  button.textContent = "Change Status";
+  console.log(book.classList.value);
+
+  button.addEventListener("click", () => {
+    if (book.classList.value === "book") {
+      book.classList.add("read");
+    } else if (book.classList.value === "book read") {
+      book.classList.remove("read");
+    }
+
+    changeBookStatusInArray(title);
+  });
+
+  bookElement.appendChild(button);
+}
+
+function changeBookStatusInArray(title) {
+  bookStack = bookStack.map((book) => {
+    if (book.title === title) {
+      book.haveRead = !book.haveRead; // Toggle the haveRead property
+    }
+    return book; // Return the modified book
+  });
 }
 
 function createBookElement() {
@@ -52,6 +103,7 @@ function createBookElement() {
   book.appendChild(bookPage);
   book.classList.add(haveRead.checked ? "read" : "notRead");
   createBookObject();
+  addChangeStatusButton(book);
   addDeleteButton(book);
   bookShelf.appendChild(book);
 }
