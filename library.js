@@ -101,7 +101,12 @@ function createBookElement() {
   book.appendChild(bookTitle);
   book.appendChild(bookAuthor);
   book.appendChild(bookPage);
-  book.classList.add(haveRead.checked ? "read" : "notRead");
+  if (haveRead.checked) {
+    book.classList.add("read");
+  } else {
+    book.classList.remove("read");
+  }
+
   createBookObject();
   addChangeStatusButton(book);
   addDeleteButton(book);

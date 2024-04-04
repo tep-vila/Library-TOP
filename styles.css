@@ -98,3 +98,10 @@ body {
   padding: 0.8vh 1.2vw;
   border-radius: 5px;
 }
+
+/* FOR FORM */
+dialog {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
