@@ -130,3 +130,9 @@ submit.addEventListener("click", () => {
   clearInput();
   form.close();
 });
+
+const exitButton = document.querySelector(".top > div:nth-child(2) ");
+exitButton.addEventListener("click", () => {
+  clearInput();
+  form.close();
+});

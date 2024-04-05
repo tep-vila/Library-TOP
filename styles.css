@@ -102,6 +102,77 @@ body {
 /* FOR FORM */
 dialog {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 40%;
+  height: 50vh;
+  width: 25vw;
+}
+
+dialog::backdrop {
+  background-color: rgb(26, 25, 25);
+  opacity: 0.9;
+}
+
+.top {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top > div:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.top > div:nth-child(2) {
+  color: red;
+  background-color: black;
+  padding: 10px 12px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.check {
+  display: inline-block;
+  margin-right: 50%;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: block;
+  width: 100%;
+}
+
+.submit:hover {
+  background-color: #0056b3;
 }
