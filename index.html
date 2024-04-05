@@ -18,7 +18,7 @@
     </div>
     <div class="shelf"></div>
     <dialog class="form">
-      <form>
+      <form action="" method="post">
         <div class="top">
           <div>Add Book</div>
           <div>X</div>
@@ -30,17 +30,17 @@
           </li>
           <li>
             <label for="author">Author</label
-            ><input type="text" id="author" name="author" />
+            ><input type="text" id="author" name="author" required />
           </li>
           <li>
             <label for="page">Page</label
-            ><input type="number" name="page" id="page" />
+            ><input type="number" name="page" id="page" required />
           </li>
           <li>
             <label class="check" for="haveRead">Have read?</label
             ><input type="checkbox" id="haveRead" name="haveRead" />
           </li>
-          <button class="submit">Submit</button>
+          <button type="submit" class="submit">Submit</button>
         </ul>
       </form>
     </dialog>

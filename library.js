@@ -125,7 +125,8 @@ addBookButton.addEventListener("click", (event) => {
   form.showModal();
 });
 
-submit.addEventListener("click", () => {
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
   createBookElement();
   clearInput();
   form.close();
